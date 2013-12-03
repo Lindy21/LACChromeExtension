@@ -18,9 +18,9 @@ $(document).ready ( function () {
         };
 
         console.log(tab.url);
-        if (tab.url.indexOf("http://www.youtube.com/watch?v=") != -1) {
+        if (tab.url.indexOf("www.youtube.com/watch?v=") != -1) {
           act = "watched";
-          obj.definition.description['en-US'] = tab.url.substring(31);
+          obj.definition.description['en-US'] = tab.url.substring(tab.url.indexOf("=")+1);
         }
 
         bgScript.sendStatement(act, obj, function (err) {
